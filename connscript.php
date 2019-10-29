@@ -9,16 +9,14 @@ $password = 'SF0P8Clay!';
 
 $link = mysqli_connect($dbhost, $username, $password, $dbname, $dbport);
 
-/* Check Connection
+//Check Connection
 if($link === false){
 	echo "Connection failed";
 } else {
 	echo "Successfully connected!";
 }
-*/
-?>
 
-<?php
+/*
 $search = mysqli_real_escape_string($_POST["searchreq"]);
 
 $sql = "SELECT * FROM full_display WHERE ItemID LIKE '%$search%'";
@@ -40,7 +38,7 @@ if((mysqli_num_rows($raw_result)) > 0) {
 
 // Free Result Set
 mysql_free_result($raw_result);
-
+*/
 mysqli_close($link);
 
 ?>
