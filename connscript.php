@@ -10,27 +10,28 @@ $password = 'SF0P8Clay!';
 $link = mysqli_connect($dbhost, $username, $password, $dbname, $dbport);
 
 //Check Connection
+/*
 if($link === false){
 	echo "Connection failed";
 } else {
 	echo "Successfully connected!";
 }
+*/
 
-/*
-$search = mysqli_real_escape_string($_POST["searchreq"]);
+$search = $_POST["searchreq"];
 
-$sql = "SELECT * FROM full_display WHERE ItemID LIKE '%$search%'";
+$sql = "SELECT * FROM full_display WHERE ItemName LIKE '%" . $search . "%'";
 $raw_result = mysqli_query($link, $sql);
-$result = mysqli_num_rows($raw_result);
 
 if((mysqli_num_rows($raw_result)) > 0) {
 	//output data from each row as long as there is a result form the database
-	while($row = mysql_fetch_assoc($raw_result)) {
+	while($row = mysqli_fetch_assoc($raw_result)) {
 		//printf ("%s (%s) \n,", $row["ItemID"], $row["ItemName"], $row["QTY"], $row["zone"],$row["subsection"]);
-		echo $row['ItemID']);
+		echo $row['ItemID'];
 		echo $row['ItemName'];
 		echo $row['QTY'];
-		echo $row['zone']
+		echo $row['zone'];
+
 	}
 } else {
 	echo ("no results :(");
@@ -38,7 +39,7 @@ if((mysqli_num_rows($raw_result)) > 0) {
 
 // Free Result Set
 mysql_free_result($raw_result);
-*/
+
 mysqli_close($link);
 
 ?>
