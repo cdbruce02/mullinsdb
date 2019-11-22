@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -7,8 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div id="navbar">
-    <nav class="is-link navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="is-link navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a id="title" class="navbar-item is-size-4" href="..">Mr. Mullins' Inventory</a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -33,41 +35,26 @@
     </nav>
   </div>
 <div class="page">
-<div class="table-container">
-<?php
-require 'connection.php';
-
-//SQL Query
-$sql = "SELECT ItemID, ItemName, QTY, zone, subsection FROM full_display WHERE ItemName LIKE ? ORDER BY zone, subsection";
-
-$stmt = $link->prepare($sql);
-
-//Pass color post request
-$search = '%'.$_POST["searchreq"].'%';
-
-//Set all incoming inputs from search bar to be a string, thereby ignoring any inputs that are SQL commands
-$stmt->bind_param("s", $search);
-
-// Execute query
-$stmt->execute();
-
-//get the result as an array
-$result = $stmt->get_result();
-
-// if 1+ rows in array then output results in a table
-if ($result->num_rows > 0){
-  echo "<table class='table'><tr><th>Item ID</th><th>Item Name</th><th>Quantity</th><th>Location</th></tr>";
-  while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["ItemID"] ."</td><td>" . $row["ItemName"] . "</td><td>" . $row[QTY] . "</td><td>" . $row["zone"] . " " . $row["subsection"] . "</td></tr>";
-  }
-} else {
-  echo "Couldn't find anything";
-}
-
-mysqli_close($link);
-
-?>
+  <div class="roommap_container">
+    <img src="/images/room_map.jpg" alt="Room Map" usemap="#room_map" width="1280" height="798">
+      <form name="form_map" action="mapquery.php" method="POST">
+        <input type='hidden' id='zonecolor' name='color'>
+          <map name="room_map">
+            <area shape="poly" coords="375,240, 544,240, 544,213, 617,213, 617,166, 678,166, 678,287, 716,287, 716,370, 678,370, 678,596, 483,596, 483,639, 458,639, 458,560, 617,560, 617,482, 375,482" alt="Red Zone" href="#" onclick="submitform('Red')">
+            <area shape="rect" coords="1060,166, 1226,613" alt="Blue Zone" href='#' onclick="submitform('Blue')">
+            <area shape="rect" coords="796,254, 921,558" alt="Green Zone" href="#" onclick="submitform('Green')">
+            <area shape="rect" coords="744,619, 1198,721" alt="Purple Zone" href="#" onclick="submitform('Purple')">
+            <area shape="poly" coords="44,166, 198,166, 198,620, 428,620, 428,722, 44,722" alt="Yellow Zone" href="#" onclick="submitform('Yellow')">
+          </map>
+      </form>
+  </div>
 </div>
-</div>
+  <script language="javascript" type="text/javascript">
+    function submitform(zone){
+    window.alert("Data will be displayed for " + zone + " zone.");
+    document.getElementById('zonecolor').value = zone;
+    document.form_map.submit();
+    }
+  </script>
 </body>
 </html>

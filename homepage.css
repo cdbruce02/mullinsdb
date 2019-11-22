@@ -3,10 +3,38 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
-img {
-  padding-top: 75px;
+
+.title {
+  float: left;
+  padding: 50px;
+  text-decoration: none;
+  font-family:'Lato', sans-serif;
+  color: #000;
+}
+.title:hover {
+  color: #777;
 }
 
-.searchbar {
-  float: right;
+#search {
+  width: auto;
 }
+
+#navbar {
+  font-family:'Lato', sans-serif;
+}
+
+.searchbar{
+  float: right;
+  margin: 0px;
+  padding: 15px;
+}
+
+.page{
+  margin: 0px;
+  padding: 100px;
+}
+
+.table{
+  margin: auto;
+}
+

@@ -1,35 +1,37 @@
-table.resultstable {
-  border: 3px solid #000000;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
+.title {
+  float: left;
+  padding: 50px;
+  text-decoration: none;
+  font-family:'Lato', sans-serif;
+  color: #000;
 }
-table.resultstable td, table.resultstable th {
-  border: 1px solid #000000;
-  padding: 5px 4px;
+.title:hover {
+  color: #777;
 }
-table.resultstable tbody td {
-  font-size: 13px;
+
+#search {
+	width: auto;
 }
-table.resultstable thead {
-  background: #CFCFCF;
-  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-  border-bottom: 3px solid #000000;
+
+#navbar {
+	font-family:'Lato', sans-serif;
 }
-table.resultstable thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #000000;
-  text-align: left;
+
+.searchbar{
+  float: right;
+  margin: 0px;
+  padding: 15px;
 }
-table.resultstable tfoot {
-  font-size: 14px;
-  font-weight: bold;
-  color: #000000;
-  border-top: 3px solid #000000;
+
+.page{
+  margin: 50px;
+  padding: 100px;
 }
-table.resultstable tfoot td {
-  font-size: 14px;
+
+.table{
+  margin: auto;
+}
+
+.table:hover {
+  color:#555;
 }
