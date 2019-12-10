@@ -1,3 +1,3 @@
 <?php
-echo $_POST["searchreq"];
+echo $_POST["editid"];
 ?>
