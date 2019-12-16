@@ -21,8 +21,8 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href=/images/room_map.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
-          <a class="navbar-item" href=/login_landing.html >Teacher Login</a>
+          <a class="navbar-item" href=/images/mullins.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
         </div>
         <div class="navbar-end">
           <div class="searchbar">
@@ -36,8 +36,8 @@
     </nav>
   </div>
 <div class="page">
-  <div class="roommap_container">
-    <img src="/images/room_map.jpg" alt="Room Map" usemap="#room_map" width="1280" height="798">
+  <div class="roommap_container" style="overflow-x:scroll; white-space: nowrap">
+    <img src="/images/mullins.jpg" alt="Room Map" usemap="#room_map" width="1280" height="798">
       <form name="form_map" action="mapquery.php" method="POST">
         <input type='hidden' id='zonecolor' name='color'>
           <map name="room_map">
@@ -56,8 +56,7 @@
     document.getElementById('zonecolor').value = zone;
     document.form_map.submit();
     }
-
-
   </script>
+  <script language="javascript" type="text/javascript" src="navbar.js"></script>
 </body>
 </html>

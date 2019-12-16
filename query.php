@@ -20,7 +20,7 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href=/images/room_map.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
-          <a class="navbar-item" href=/login_landing.html >Teacher Login</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
         </div>
         <div class="navbar-end">
           <div class="searchbar">
@@ -39,7 +39,7 @@
 <?php
 require 'connection.php';
 
-//SQL Query
+//SQL Queryi
 $sql = "SELECT ItemID, ItemName, QTY, zone, subsection FROM full_display WHERE ItemName LIKE ? ORDER BY zone, subsection";
 
 $stmt = $link->prepare($sql);

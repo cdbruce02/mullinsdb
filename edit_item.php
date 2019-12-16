@@ -24,10 +24,9 @@ if ($result->num_rows > 0){
 } else {
   phpAlert("Couldn't find any items with that ID. Please try again.");
   header("Location: /login_landing.html ");
-
 }
-
 ?>
+
   <div id="navbar">
     <nav class="is-link navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">

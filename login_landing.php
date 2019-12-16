@@ -1,3 +1,12 @@
+<?php
+//We need to use sessions, so start with session starting
+session_start();
+//if use not logged in, redirect to login page
+if (!isset($_SESSION['loggedin'])) {
+  header('Location: login.html');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +29,7 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href=/images/room_map.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
-          <a class="navbar-item" href=/login_landing.html >Teacher Login</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
         </div>
         <div class="navbar-end">
           <div class="searchbar">
@@ -47,7 +56,7 @@
               </header>
               <section class="modal-card-body">
                 <h1>To edit, insert an Item ID.</h1>
-                <form action="edit_item.php" method="POST">
+                <form id="editForm" action="edit_item.php" method="POST">
                   <input id="idsearch" class="input" placeholder="ItemId" name="editid" style="width:12em;">
                   <input id="submit" class="button is-success" value="Submit" style="width:6em;" type="submit">
                 </form>
@@ -120,7 +129,8 @@
     </div>
   </div>
 
-<script>
+<script type='text/javascript'>
+document.onload = function() {
 //get modal
 var editModal   = document.getElementById("editModal");
 var addModal    = document.getElementById("addModal");
@@ -129,47 +139,52 @@ var removeModal = document.getElementById("removeModal");
 var editBtn   = document.getElementById("editBtn");
 var addBtn    = document.getElementById("addBtn");
 var removeBtn = document.getElementById("removeBtn");
-
-//get span that will close modal
-var closeBtnE  = document.getElementById("closeEditModal");
-var cancelBtnE = document.getElementById("cancelEditModal");
-var closeBtnA  = document.getElementById("closeAddModal");
-var cancelBtnA = document.getElementById("cancelAddModal");
-var closeBtnR  = document.getElementById("closeRemModal");
-var cancelBtnR = document.getElementById("cancelRemModal");
+//Get all forms
+var editForm = document.getElementById("editForm");
+var addForm = document.getElementById("addForm");
+var removeForm = document.getElementById("removeForm");
+}
 
 //Click edit item button, open edit item modal
 editBtn.onclick = function() {
   editModal.style.display = "block";
   console.log("Edit Item");
 }
+
 //Click add item button, open add item Modal
 addBtn.onclick = function() {
   addModal.style.display = "block";
   console.log("Add Item");
 }
+
 //Click remove item button, open remove item modal
 removeBtn.onclick = function() {
   removeModal.style.display = "block";
   console.log("Remove Item");
 }
 
+var closeBtnR  = document.getElementById("closeRemModal");
+var cancelBtnR = document.getElementById("cancelRemModal");
+var closeBtnA  = document.getElementById("closeAddModal");
+var cancelBtnA = document.getElementById("cancelAddModal");
+var closeBtnE = document.getElementById("closeEditModal");
+var cancelBtnE = document.getElementById("cancelEditModal");
+
 function closeModal() {
   editModal.style.display   = "none";
   addModal.style.display    = "none";
   removeModal.style.display = "none";
-  document.getElementById("editForm").reset();
-  document.getElementById("addForm").reset();
-  document.getElementById("removeForm").reset();
+  editForm.reset();
+  removeForm.reset();
+  addForm.reset();
 }
+
 closeBtnE.onclick  = () => { closeModal(); }
 cancelBtnE.onclick = () => { closeModal(); }
 closeBtnA.onclick  = () => { closeModal(); }
 cancelBtnA.onclick = () => { closeModal(); }
 closeBtnR.onclick  = () => { closeModal(); }
 cancelBtnR.onclick = () => { closeModal(); }
-
 </script>
-
 </body>
 </html>
