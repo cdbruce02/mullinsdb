@@ -35,12 +35,12 @@ if ($result->num_rows > 0){
   $removeItem2->close();
   $removeItem3->close();
   phpAlert("Item Successfully Deleted!");
-  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com';
+  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com/login_landing.php';
   echo '<META HTTP-EQUIV=REFRESH CONTENT="1; '.$url.'">';
 } else {
   //If you can't find anything, make a pop-up that says there is nothing and then redirect back to login landing page
   phpAlert("Couldn't find any items with that ID. Please try again.");
-  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com';
+  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com/login_landing.php';
   echo '<META HTTP-EQUIV=REFRESH CONTENT="1; '.$url.'">';
 }
 $link->close();

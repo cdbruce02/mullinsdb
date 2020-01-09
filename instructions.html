@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="homepage.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar">
+    <nav class="is-dark navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="/images/logo.png" href="..">
+        </a>
+        <a id="title" class="navbar-item is-size-4" href="..">VultureDB</a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href=/images/mullins.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
+          <a class="navbar-item" href=/instructions.html>Instructions</a>
+          <a class="navbar-item" href=/overview.html>Info</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item is-active">
+            <div class="searchbar">
+              <form action="query.php" method="POST">
+                <div class="select">
+                  <select name="category">
+                    <option>Search By Category</option>
+                    <option value="0">Vex/Knex</option>
+                    <option value="1">Electronics</option>
+                    <option value="2">School Supplies</option>
+                    <option value="3">Tools</option>
+                    <option value="4">Wood</option>
+                    <option value="5">Hardware</option>
+                    <option value="6">Cardboard/Foam/Plastic</option>
+                    <option value="7">Mechanical</option>
+                    <option value="8">Wiring</option>
+                    <option value="9">Misc</option>
+                  </select>
+                </div>
+                <input id="search" type="text" placeholder="Type here" name="searchreq" class="input"style="font-family:'Lato'">
+                <input id="submit" type="submit" value="Search" class="button">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-parent">
+        <div class="tile is-child box">
+          <p class="subtitle" style="text-align:center;"><strong>STUDENT INSTRUCTIONS</strong></p>
+          <br><p class="subtitle"><strong>Note: It is REQUIRED to inform Mr. Mullins of all items you take.</strong> </p><p> This will be used for keeping track of item quantities.</p><br>
+          <p class="subtitle">Map Search</p>
+          <p>To use the map feature, click on a section of the map. When clicked, you will be brought to another page displaying all of the items in that colored zone of the room along with their corresponding Item IDs, Quantities, and Locations. This feature may be used for preview of a section
+          </p><br>
+          <p class="subtitle">Search Bar</p>
+          <p>To search for an item, please type the item you are searching for in the search bar. If nothing appears on first search, then try adding/removing an 's' or any other plural. <br> This will display a table with the names of all items that match the search and their corresponding Item IDs, Quantities, and Locations. Once you've found the item you're searching for, remember it's Location. Use the Display Map tab to open the map in another tab for location reference if needed. Finally, go find the Item! But remember to let Mr. Mullins know before you borrow/use the item for inventory tracking purposes.
+          </p><br>
+          <p class="subtitle">Display Map</p>
+          <p>Clicking on the map tab in the navigation bar will bring up an image of the map in a separate browswer window. This can be used for reference when searching for an item.
+          </p>
+        </div>
+        <div class="tile is-child box">
+          <p class="subtitle" style="text-align:center;"><strong>TEACHER INSTRUCTIONS</strong></p>
+          <br><p class="subtitle"><strong>Note: As students approach, use the "Edit Item" feature on the login screen to update quantities.</strong></p>
+          <p class="subtitle">Login Page</p>
+          <p>To access teacher-exclusive inventory management features (add, remove, edit), click on the "Teacher Login" tab in the navigation bar. This will bring you to the login page, where you can input an assigned username and password. (just use user: testuser, pass: testpass for now) Once entered, this will create a session that will keep you logged in for the duration of the open tab. You are now free to access the login home page, which contains buttons for each feature. </p>
+          <br><p class="subtitle">Add an Item</p>
+          <p>To add an item, login using given credentials and navigate to teacher home page. Then, click on 'Add Item' button. Fill out ALL fields, including Item ID, Name, Quantity, Zone, Color, and Subsection.</p>
+          <br><p class="subtitle">Edit an Item</p>
+          <p>To edit an item, login using given credentials and navigate to teacher home page. Then, click on 'Edit item' button. Type in the Item ID of the item you would like to edit. This will bring you to a page where you can insert new values for each field. If you do not plan to change an item's attribute in one category, just copy the 'old' value and paste it in the 'new' field. Fill out ALL fields. **NOTE** For security and database continuity reasons, you are unable to edit the Item IDs from the website. For this, you must connect to the database using MySQL Workbench.</p>
+          <br><p class="subtitle">Remove an Item</p>
+          <p>To remove an item, login using given credentials and navigate to teacher home page. Then, click on 'Remove Item' button. Type in the Item ID of the item you would like to remove. Then, click submit. The item will be deleted from the inventory database.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

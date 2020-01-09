@@ -28,26 +28,48 @@ if ($result->num_rows > 0){
 ?>
 
   <div id="navbar">
-    <nav class="is-link navbar" role="navigation" aria-label="main navigation">
+    <nav class="is-dark navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a id="title" class="navbar-item is-size-4" href="..">Mr. Mullins' Inventory</a>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a class="navbar-item">
+          <img src="/images/logo.png" href="..">
+        </a>
+        <a id="title" class="navbar-item is-size-4" href="..">VultureDB</a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div class="navbar-menu">
+      <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href=/images/room_map.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
-          <a class="navbar-item" href=/login_landing.html >Teacher Login</a>
+          <a class="navbar-item" href=/images/mullins.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
+          <a class="navbar-item" href=/instructions.html>Instructions</a>
+          <a class="navbar-item" href=/overview.html>Info</a>
         </div>
         <div class="navbar-end">
-          <div class="searchbar">
-            <form action="query.php" method="POST">
-              <input id="search" type="text" placeholder="Type here" name="searchreq" class="input"style="font-family:'Lato'">
-              <input id="submit" type="submit" value="Search" class="button">
-            </form>
+          <div class="navbar-item is-active">
+            <div class="searchbar">
+              <form action="query.php" method="POST">
+                <div class="select">
+                  <select name="category">
+                    <option>Search By Category</option>
+                    <option value="0">Vex/Knex</option>
+                    <option value="1">Electronics</option>
+                    <option value="2">School Supplies</option>
+                    <option value="3">Tools</option>
+                    <option value="4">Wood</option>
+                    <option value="5">Hardware</option>
+                    <option value="6">Cardboard/Foam/Plastic</option>
+                    <option value="7">Mechanical</option>
+                    <option value="8">Wiring</option>
+                    <option value="9">Misc</option>
+                  </select>
+                </div>
+                <input id="search" type="text" placeholder="Type here" name="searchreq" class="input"style="font-family:'Lato'">
+                <input id="submit" type="submit" value="Search" class="button">
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="homepage.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="navbar">
+    <nav class="is-dark navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="/images/logo.png" href="..">
+        </a>
+        <a id="title" class="navbar-item is-size-4" href="..">VultureDB</a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href=/images/mullins.jpg target="_blank" title="Open Room Map in New Tab">Map</a>
+          <a class="navbar-item" href=/login_landing.php>Teacher Login</a>
+          <a class="navbar-item" href=/instructions.html>Instructions</a>
+          <a class="navbar-item" href=/overview.html>Info</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item is-active">
+            <div class="searchbar">
+              <form action="query.php" method="POST">
+                <div class="select">
+                  <select name="category">
+                    <option>Search By Category</option>
+                    <option value="0">Vex/Knex</option>
+                    <option value="1">Electronics</option>
+                    <option value="2">School Supplies</option>
+                    <option value="3">Tools</option>
+                    <option value="4">Wood</option>
+                    <option value="5">Hardware</option>
+                    <option value="6">Cardboard/Foam/Plastic</option>
+                    <option value="7">Mechanical</option>
+                    <option value="8">Wiring</option>
+                    <option value="9">Misc</option>
+                  </select>
+                </div>
+                <input id="search" type="text" placeholder="Type here" name="searchreq" class="input"style="font-family:'Lato'">
+                <input id="submit" type="submit" value="Search" class="button">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-parent">
+          <div class="tile is-child box">
+            <article class="media">
+              <figure class="media-left">
+                <p class="image is-96x96">
+                  <img src="/images/logo.png">
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p class="subtitle"><strong>VultureDB</strong></p>
+                  <p>
+                  VultureDB is a hassle-free, low-cost, easy to use inventory management product and service for teachers that will save time and increase efficiency compared to competitors. VultureDB is secure, allowing administrators full control over inventory while still allowing the bulk of end users (students, tinkerers, etc.) access to necessary visualization and search features.
+                  </p><br>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero is-warning">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="subtitle"><strong>
+            Buy Today!</strong>
+        </h1>
+        <h2 class="subtitle">
+          Starting $20/Month
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-parent">
+          <!--- INSERT DESCRIPTIONS OF FEATURES --->
+          <div class="tile is-parent">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <!--- INSERT IMAGE OF MAP HERE --->
+                <figure class="image is-5by3">
+                  <img src="/images/mullins.jpg">
+                </figure>
+              </div>
+            </div>
+            <div class="tile is-parent is-8">
+              <div class="tile is-child box">
+                <p class="subtitle"><strong>Room Visualization</strong></p>
+                <p>
+                  Unique amongst competitors, VultureDB's room visualization features are a must-have for both students and teachers alike. Our experts will carefully organize your room into sections and create a corresponding map. Each area of the room (down to the indivudual shelves!) will have its own alphanumeric identifier, and users will know exactly where items are if they use this map. In fact, the map feature is proven to increase efficiency when retrieving items.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-parent is-8">
+              <div class="tile is-child box">
+                <p class="subtitle"><strong>Effective Search Tool</strong></p>
+                <p>Search for parts by:</p>
+                <div class="content">
+                  <ul>
+                    <li>Keyword</li>
+                    <li>Item Category</li>
+                    <li>Item ID</li>
+                    <li>Location</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <!--- INSERT IMAGE OF SEARCH HERE --->
+                <figure class="image is-5by3">
+                  <img src="images/tablesearch.jpg">
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <!--- INSERT IMAGE OF ADMIN PAGE HERE --->
+                <figure class="image is-5by4">
+                  <img src="images/add.jpg">
+                </figure>
+              </div>
+            </div>
+            <div class="tile is-parent is-8">
+              <div class="tile is-child box">
+                <p class="subtitle"><strong>Administrator Function</strong></p>
+                <p>
+                  Powerful administrator tool that grants admins full control over their inventory. Once logged in, admins can add, edit, and remove items in the database through the control panel. This avoids the need to use SQL and streamlines the process of tracking inventory, only displaying what is necessary.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tile is-parent">
+            <div class="tile is-parent is-6">
+              <div class="tile is-child box">
+                <p class="subtitle">Technical Specs</p>
+                <p>
+                  Powered by Amazon Web Services EC2, RDS<br>
+                  PHP 7.4, JavaScript, CSS 3, HTML 5, MySQL 8.0.18<br>
+                  Apache Web Server
+                </p>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <p class="subtitle">Contact</p>
+                <p>
+                  Telephone: 919-924-9582<br>
+                  Email: support.vulturedb@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tile is-child box">
+            <p class="subtitle">Reviews</p>
+            <article class="media">
+              <figure class="media-left">
+                <!--- PICTURE OF MR MULLINS --->
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Derek Mullins - Teacher</strong>
+                    <br>
+                    xxxxxxxxxxxxxxxxxxxxxxxx
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="media">
+              <figure class="media-left">
+                <!--- PICTURE OF MRS CADAVID --->
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Diane Cadavid - Administrator</strong>
+                    <br>
+                    xxxxxxxxxxxxxxxxxxxxxxxx
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="media">
+              <figure class="media-left">
+                <!--- Picture of noah --->
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Noah Posey - Student</strong>
+                    <br>
+                    "I wish we had this when we started this class!"
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <br><p>
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+

@@ -41,7 +41,7 @@ if (!empty($itemid) && !empty($itemid) && !empty($itemQTY) && !empty($itemzone) 
   phpAlert("Please complete all fields.");
 }
 //Redirect back to home page
-$url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com';
+$url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com/login_landing.php';
 echo '<META HTTP-EQUIV=REFRESH CONTENT="1; '.$url.'">';
 
 $link->close();

@@ -4,7 +4,6 @@ function phpAlert($msg) {
   echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
   $ItemID = $_POST["newitemid"];
-
   $update1 = $link->prepare("UPDATE itemidname SET ItemName = ? WHERE ItemID = ?");
   $update2 = $link->prepare("UPDATE itemQTY SET QTY = ? WHERE itemID = ?");
   $update3 = $link->prepare("UPDATE itemlocation SET zone = ?,  subsection = ? WHERE itemID = ?");
@@ -31,7 +30,7 @@ function phpAlert($msg) {
   } elseif ($status2 === false) {
     trigger_error($update2->error, E_USER_ERROR);
   } elseif ($status3 === false) {
-    trigger_error($update3->eroor, E_USER_ERROR);
+    trigger_error($update3->error, E_USER_ERROR);
   } else{
 //echo out concat.
   phpAlert("Item successfully updated! ItemID: " . $ItemID . " Item Name: ". $newitemname. " Item QTY: ". $newitemQTY. " Item Location: " . $newitemzone. " " . $newitemsub);
@@ -40,9 +39,8 @@ function phpAlert($msg) {
   $update1->close();
   $update2->close();
   $update3->close();
-  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com';
+  $url = 'http://ec2-18-225-33-105.us-east-2.compute.amazonaws.com/login_landing.php';
   echo '<META HTTP-EQUIV=REFRESH CONTENT="1; '.$url.'">';
   }
 $link->close();
-
 ?>
