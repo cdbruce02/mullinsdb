@@ -82,6 +82,52 @@
           <p>To edit an item, login using given credentials and navigate to teacher home page. Then, click on 'Edit item' button. Type in the Item ID of the item you would like to edit. This will bring you to a page where you can insert new values for each field. If you do not plan to change an item's attribute in one category, just copy the 'old' value and paste it in the 'new' field. Fill out ALL fields. **NOTE** For security and database continuity reasons, you are unable to edit the Item IDs from the website. For this, you must connect to the database using MySQL Workbench.</p>
           <br><p class="subtitle">Remove an Item</p>
           <p>To remove an item, login using given credentials and navigate to teacher home page. Then, click on 'Remove Item' button. Type in the Item ID of the item you would like to remove. Then, click submit. The item will be deleted from the inventory database.</p>
+          <br><p class="subtitle">Getting a Unique Item ID</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Number</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td> <td>Vex/KNEX</td>
+              </tr>
+              <tr>
+                <td>1</td> <td>Electronics</td>
+              </tr>
+              <tr>
+                <td>2</td> <td>School Supplies</td>
+              </tr>
+              <tr>
+                <td>3</td> <td>Tools</td>
+              </tr>
+              <tr>
+                <td>4</td> <td>Wood</td>
+              </tr>
+              <tr>
+                <td>5</td> <td>Hardware</td>
+              </tr>
+              <tr>
+                <td>6</td> <td>Cardboard/Foam/Plastic</td>
+              </tr>
+              <tr>
+                <td>7</td> <td>Mechanical</td>
+              </tr>
+              <tr>
+                <td>8</td> <td>Wiring</td>
+              </tr>
+              <tr>
+                <td>9</td> <td>Misc</td>
+              </tr>
+            </tbody>
+          </table><br>
+          <p>The table above labels the item categories by number, and this will be used to create an item ID. Decide which category your item falls under. This will be the the first digit of the item ID. The last three digits will count from 000 to 999. Search your item category in the navigation bar and scroll to the bottom to find the largest item ID. Assign this item ID as the next number (e.g. if the last Item ID is 1058, make yours 1059). The final part of the Item ID are 2-4 letters that can be used to abbreviate the Item (e.g Flathead Screwdrivers could be FHS).</p>
+          <br><p class="subtitle">Editing ItemIDs, Bulk Edits, ETC.</p>
+          <p>Unfortunately, there is no way for an administrator to directly edit an ItemID or move entire locations at once. To perform such advanced features, please contact support at support.vulturedb@gmail.com.
+          If you wish to do this manually, you will have to connect to the database directly through mySQL Workbench. From there, you can use SQL functions (found on W3Schools) to do more advanced edits.</p>
+
         </div>
       </div>
     </div>

@@ -65,7 +65,7 @@ $category = $_POST["category"];
 if (empty($searchreq)){
   $idsearch = $category.'%';
 
-	$idsql = "SELECT ItemID, ItemName, QTY, zone, subsection FROM full_display WHERE ItemID LIKE ? ORDER BY zone, subsection";
+	$idsql = "SELECT ItemID, ItemName, QTY, zone, subsection FROM full_display WHERE ItemID LIKE ? ORDER BY ItemID";
   $idstmt = $link->prepare($idsql);
 
   //Set all incoming inputs from search bar to be a string, thereby ignoring any inputs that are SQL commands
