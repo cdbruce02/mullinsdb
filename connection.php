@@ -5,8 +5,8 @@ $dbport = '3306';
 $dbname = 'mullinsdb';
 $charset = 'utf8' ;
 
-$username = 'cdbruce02';
-$password = 'SF0P8Clay!';
+$username = '-------';
+$password = '---------';
 
 $link = mysqli_connect($dbhost, $username, $password, $dbname, $dbport);
 
